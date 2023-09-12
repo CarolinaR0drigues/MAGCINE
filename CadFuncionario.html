@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<!-- GIOVANA DEMUNER -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/Formulário.css">
+    <link rel="icon" href="img/LOGO.png">
+    <title>Cadastrar Funcionário</title>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <form action="php/CadFuncionario.php" method="post">
+            <fieldset>
+                <legend><b>Cadastrar Funcionários</b></legend>
+                <br>
+                <div class="inputBox">
+                    <label for="nome" class="labelInput">Nome completo</label>
+                    <input type="text" name="nome" id="nome" class="inputUser" required minlength="2" maxlength="50">
+                </div>
+                <br><br>
+                <div class="inputBox">
+                    <label for="email" class="labelInput">Email</label>
+                    <input type="email" name="email" id="email" class="inputUser" required minlength="13"
+                        maxlength="256">
+                </div>
+                <br><br>
+                <div class="inputBox">
+                    <label for="telefone" class="labelInput">Telefone</label>
+                    <input type="tel" name="telefone" id="telefone" class="inputUser" required
+                        pattern="\(\d{2}\)\d{4}-\d{4}">
+                </div>
+                <p>Sexo:</p>
+                <input type="radio" id="feminino" name="sexo" value="feminino" required>
+                <label for="sexo">Feminino</label>
+                <br>
+                <input type="radio" id="masculino" name="sexo" value="masculino" required>
+                <label for="sexo">Masculino</label>
+                <br>
+                <input type="radio" id="outro" name="sexo" value="outro" required>
+                <label for="sexo">Outro</label>
+                <br><br>
+                <label for="data_nascimento"><b>Data de Nascimento:</b></label>
+                <input type="date" name="data_nascimento" id="data_nascimento" required>
+                <br><br>
+                <div class="inputBox">
+                    <label for="cidade" class="labelInput">Cidade</label>
+                    <input type="text" name="cidade" id="cidade" class="inputUser" required minlength="1"
+                        maxlength="256">
+                </div>
+                <br><br>
+                <div class="inputBox">
+                    <label for="estado" class="labelInput">Estado</label>
+                    <input type="text" name="estado" id="estado" class="inputUser" required minlength="1"
+                        maxlength="256">
+                </div>
+                <br><br>
+                <div class="inputBox">
+                    <label for="endereco" class="labelInput">Endereço</label>
+                    <input type="text" name="endereco" id="endereco" class="inputUser" required minlength="5"
+                        maxlength="256">
+                </div>
+                <br><br>
+                <button type="submit">Enviar</button>
+
+            </fieldset>
+        </form>
+    </div>
+    <script src="js/Celular.js"></script>
+    <script>
+        new FormMask(document.querySelector("#celular"), "(__)_____-____", "_", ["(", ")", "-"])
+    </script>
+    <script src="js/script.js"></script>>
+</body>
+
+</html>

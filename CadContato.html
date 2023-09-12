@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<!-- MILENE SILVEIRA KRUGUEL -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/Form.css">
+    <link rel="icon" href="img/LOGO.png">
+    <title>Cadastrar Contato</title>
+</head>
+
+<body>
+    <div class="header">
+        <div class="logo">
+            <a href="#">
+                <img src="img/MAGCINE.png" alt="">
+            </a>
+        </div>
+    </div>
+
+    <div class="login_body">
+        <div class="login_box">
+            <h2>Contato</h2>
+            <form action="php/CadContato.php" method="post">
+                <div class="login-button">
+                    <button type="submit">Continuar</button>
+
+                </div>
+                <div class="input-grupo">
+                    <div class="input-box">
+                        <label for="nome_completo">Nome Completo</label>
+                        <input id="nome_completo" type="text" name="nome_completo" placeholder="Nome completo"
+                            minlength="10" maxlength="55" required>
+                        <span class="mensagem-erro" data-erro></span>
+                    </div>
+                    <div class="input-box">
+                        <label for="email">E-mail:</label>
+                        <input id="email" type="email" name="email" placeholder="Digite seu email"
+                            onblur="validacaoEmail(f1.email)" minlength="2" maxlength="60" required>
+                        <span class="mensagem-erro" data-erro></span>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="celular">Celular</label>
+                        <input id="celular" type="text" name="celular" placeholder="(xx) xxxx-xxxx" minlength="11"
+                            maxlength="13">
+                        <span class="mensagem-erro" data-erro></span>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="data_de_nascimento">Data de Nascimento</label>
+                        <input class="data_de_nascimento" id="data_de_nascimento" type="date" name="data_de_nascimento"
+                            minlength="8" maxlength="11" required>
+                        <span class="mensagem-erro" data-erro></span>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="sexo">Sexo</label>
+                        <select id="sexo" name="sexo">
+                            <option value=""></option>
+                            <option value="Feminino">Feminino</option>
+                            <option value="Masculino">Masculino</option>
+                            <option value="Outro">Outro</option>
+                        </select>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="assunto">Assunto</label>
+                        <input id="assunto" type="text" name="assunto" placeholder="Sobre o que deseja falar?"
+                            minlength="5" maxlength="55" required>
+                        <span class="mensagem-erro" data-erro></span>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="sua_mensagem"> Sua Mensagem</label>
+                        <textarea class="sua_mensagem" name="sua_mensagem" type="text" placeholder="" id="sua_mensagem"
+                            style="height: 100px"></textarea required>
+                        <label for="floatingTextarea2"></label>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="tipo_mensagem">Sua Mensagem é uma?</label>
+                        <select id="tipo_mensagem" name="tipo_mensagem">
+                            <option value=""></option>
+                            <option value="Crítica">Crítica</option>
+                            <option value="Dúvida">Dúvida</option>
+                            <option value="Sugestão">Sugestão</option>
+                            <option value="Outro">Outro</option>
+                        </select>
+                    </div>
+
+                        <script src="js/Celular.js"></script>
+                        <script>
+                            new FormMask(document.querySelector("#celular"), "(__)_____-____", "_", ["(", ")", "-"])
+                        </script>
+                        <script src="js/script.js"></script>
+                    </div>
+                <div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

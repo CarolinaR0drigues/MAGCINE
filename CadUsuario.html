@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<!-- ANA CAROLINA RODRIGUES DO VALE -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styleUF.css">
+    <link rel="icon" href="img/LOGO.png">
+    <title>Cadastrar Usuário</title>
+</head>
+
+<body>
+    <div class="header">
+        <div class="logo">
+            <a href="#">
+                <img src="img/MAGCINE.png" alt="">
+            </a>
+        </div>
+    </div>
+    <div class="login_body">
+        <div class="login_box">
+            <h2>Cadastre-se</h2>
+            <form action="php/CadUsuario.php" method="post">
+                <div class="login-button">
+                    <button onclick="validarCPF(); return validarSenhas();" type="submit">Continuar</button>
+                </div>
+                <div class="input-grupo">
+                    <div class="input-box">
+                        <label for="nome">Nome Completo:</label>
+                        <input id="nome" type="nome" name="nome" placeholder="Digite seu nome" minlength="10" maxlength="55"
+                            required>
+                        <span class="mensagem-erro" data-erro></span>
+                    </div>
+                    <div class="input-box">
+                        <label for="cpf">CPF:</label>
+                        <input id="cpf" type="text" name="cpf" placeholder="Digite seu Cpf" required>
+                        <span class="mensagem-erro" data-erro></span>
+                    </div>
+                    <div class="input-box">
+                        <label for="sexo">Sexo:</label>
+                        <select id="sexo" name="sexo">
+                            <option value="ㅤ">Selecione</option>
+                            <option value="Feminino">Feminino</option>
+                            <option value="Masculino">Masculino</option>
+                        </select>
+                    </div>
+                    <div class="input-box">
+                        <label for="data_nascimento">Data de Nascimento:</label>
+                        <input class="data_nascimento" id="data_nascimento" name="data_nascimento" type="date" minlength="8" maxlength="11"
+                            required="required">
+                        <span class="mensagem-erro" data-erro></span>
+                    </div>
+                    <div class="input-box">
+                        <label for="celular">Celular:</label>
+                        <input id="celular" type="celular" name="celular" minlength="11" maxlength="11" required
+                            placeholder="Digite seu telefone">
+                        <span class="mensagem-erro" data-erro></span>
+                    </div>
+                    <div class="input-box">
+                        <label for="email">E-mail:</label>
+                        <input id="email" type="email" name="email" placeholder="Digite seu email" onblur="validacaoEmail(f1.email)"
+                            minlength="6" maxlength="60" required>
+                        <span class="mensagem-erro" data-erro></span>
+                    </div>
+                    <div class="input-box">
+                        <label for="endereco">Endereço:</label>
+                        <input id="endereco" type="endereco" name="endereco" placeholder="Digite seu endereço" required>
+                        <span class="mensagem-erro" data-erro></span>
+                    </div>
+                    <div class="input-box">
+                        <label for="id_alu_fk">Usuário para alugar?</label>
+                        <select id="id_alu_fk" name="id_alu_fk">
+                            <option value="0">Selecione</option>
+                            <option value="1">Sim</option>
+                            <option value="0">Não</option>
+                        </select>
+                    </div>
+                    <div class="input-box">
+                        <label for="senha">Senha:</label>
+                        <input id="senha" type="password" name="senha" placeholder="Digite sua senha" required>
+                        <span class="mensagem-erro" data-erro></span>
+                    </div>
+                    <div class="input-box">
+                        <label for="senha">Confirmar senha:</label>
+                        <input id="senha" type="password" name="senha" placeholder="Confirme sua senha" required>
+                        <span id="mensagemErro" class="mensagem-erro" data-erro></span>
+                    </div>
+                </div>
+
+                <script src="js/Celular.js"></script>
+                <script>
+                    new FormMask(document.querySelector("#celular"), "(__)_____-____", "_", ["(", ")", "-"])
+                </script>
+                <div>
+            </form>
+        </div>
+    </div>
+    <script src="js/script.js" type="submit"></script>
+</body>
+
+</html>

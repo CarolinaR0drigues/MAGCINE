@@ -1,0 +1,218 @@
+body {
+    display: flex;
+    height: 0%;
+    width: 0%;
+    position: relative;
+    background-image: url(../img/Capa.jpg);
+    background-repeat: no-repeat;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.login_body {
+    padding: 20px;
+    margin-block: 5%;
+    background-color: rgb(0, 0, 0, 0.75);
+    border-radius: 18px;
+    box-sizing: border-box;
+    transform: translateX(-40%);
+    flex: 1 0 200px;
+    box-shadow: -1px 1px 6px rgba(250, 1, 1, 0.432);
+}
+
+/*Form*/
+.login_box h2::after {
+    content: '';
+    display: block;
+    width: 8rem;
+    height: 0.3rem;
+    background-color: #ff0000;
+    margin: 0 auto;
+    position: absolute;
+    border-radius: 10px;
+    
+}
+
+.logo img {
+    height: 160px;
+    width: 187px;
+    position: fixed;
+}
+
+.login_body {
+    padding: 60px;
+    position: fixed;
+    max-width: 920px;
+    height: 570px;
+    margin-left: 42%;
+    background-color: rgb(0, 0, 0, 0.75);
+    border-radius: 18px;
+    box-sizing: border-box;
+    transform: translateX(-40%);
+}
+
+.login_body h2 {
+    font-size: 32px;
+    color: #fff;
+}
+
+.login_body input {
+    height: 50px;
+    width: 100%;
+    color: #fff;
+    background-color: #00000089;
+    border: none;
+    border-radius: 15px;
+    padding-left: 15px;
+    box-sizing: border-box;
+    outline: none;
+}
+
+.login_body input:hover {
+    background-color: #000000b1;
+}
+
+.input-grupo {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 1rem 0;
+}
+
+.input-box {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.1rem;
+}
+
+.input-box input {
+    margin: 0.6rem 0;
+    padding: 0.8rem 1.2rem;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 1px 1px 6px rgba(190, 14, 14, 0.193);
+}
+
+select{
+  
+  margin: 0.6rem 0;
+  padding: 0.8rem 1.2rem;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 1px 1px 6px rgba(190, 14, 14, 0.193);
+  color: #fff;
+  background-color: #00000089;
+}
+textarea{
+    margin: 0.6rem 0;
+    padding: 0.8rem 1.2rem;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 1px 1px 6px rgba(190, 14, 14, 0.193);
+    color: #fff;
+    background-color: #00000089;
+}
+/*Form*/
+
+
+.login_body button {
+    width: 15%;
+    height: 28px;
+    color: #ffffff;
+    font-weight: bolder;
+    font-size: 16px;
+}
+
+.input-box label,
+.gender-title h6 {
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin: -0rem;
+    color: white;
+}
+
+.login_body button {
+    background-color: #fc1722;
+    cursor: pointer;
+}
+
+.login-button button {
+    width: 13%;
+    border: none;
+    background-color: #ff0808;
+    border-radius: 10px;
+    cursor: auto;
+    margin-left: 87%;
+    margin-top: -1rem;
+}
+
+.login-button button:hover {
+    background-color: #8f0000;
+}
+
+.login-button button a {
+    text-decoration: none;
+    font-weight: 50;
+    color: #fff;
+}
+
+
+
+.right-side 
+{
+    font-size: 23px;
+    font-weight: 600;
+    color: #e11e1bb5;
+    
+}
+
+.gender-group {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.62rem;
+    padding: 0 .5rem;
+    color: white;
+
+}
+
+.gender-input {
+    display: flex;
+    align-items: center;
+    margin: 1rem;
+}
+
+.gender-input label {
+    font-size: 0.81rem;
+    font-weight: 600;
+    color: white;
+}
+
+/* Media Query */
+@media (max-width: 778px) {
+    body {
+        background-size: 900%;
+    }
+
+    .login_body {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+        transform: translateX(0%);
+    }
+
+    .login_body h2 {
+        width: 100%;
+        text-align: center;
+    }
+
+    .login_body input {
+        width: 100%;
+    }
+
+    .login_body button {
+        width: 110%;
+        margin-left: 0;
+    }
+
+    .login-button button {
+        margin-left: 0;
+    }
+}

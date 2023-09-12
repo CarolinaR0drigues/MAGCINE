@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<!-- MILENE SILVEIRA KRUGUEL -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/Form.css">
+    <link rel="icon" href="img/LOGO.png">
+    <title>Cadastrar Série</title>
+</head>
+
+<body>
+    <div class="header">
+        <div class="logo">
+            <a href="#">
+                <img src="img/MAGCINE.png" alt="">
+            </a>
+        </div>
+    </div>
+
+    <div class="login_body">
+        <div class="login_box">
+            <h2>Séries</h2>
+            <form action="php/CadSerie.php" method="post">
+                <div class="login-button">
+                    <button type="submit">Continuar</button>
+                </div>
+                <div class="input-grupo">
+                    <div class="input-box">
+                        <label for="nome">Nome</label>
+                        <input id="nome" type="text" name="nome" placeholder="Nome da Série" minlength="6"
+                            maxlength="30" required>
+                        <span class="mensagem-erro" data-erro></span>
+                    </div>
+                    <div class="input-box">
+                        <label for="temporada">Temporada</label>
+                        <input id="temporada" type="text" name="temporada" placeholder="Temporadas" minlength="1"
+                            maxlength="4" required>
+                        <span class="mensagem-erro  " data-erro></span>
+                    </div>
+                    <div class="input-box">
+                        <label for="episodios">Episódios</label>
+                        <input id="episodios" type="text" name="episodios" placeholder="Quantidade de Episódios"
+                            minlength="1" maxlength="20" required>
+                        <span class="mensagem-erro" data-erro></span>
+                    </div>
+                    <div class="input-box">
+                        <label for="data_de_lancamento">Data de lançamento</label>
+                        <input class="data_de_lancamento" id="data_de_lancamento" type="date" name="data_de_lancamento"
+                            minlength="4" maxlength="10" required>
+                        <span class="mensagem-erro" data-erro></span>
+                    </div>
+                    <div class="input-box">
+                        <label for="id_alu_fk">Disponível para Aluguel?</label>
+                        <select id="id_alu_fk" name="id_alu_fk">
+                            <option value="0">Selecione</option>
+                            <option value="1">Sim</option>
+                            <option value="0">Não</option>
+                        </select>
+                    </div>
+                    <div class="input-box">
+                        <label for="classificacao">Classificação</label required>
+                        <select id="classificacao" name="classificacao">
+                            <option value="Nenhum">Nenhum</option>
+                            <option value="Livre">Livre</option>
+                            <option value="+10">+10</option>
+                            <option value="+18">+12</option>
+                            <option value="+14">+14</option>
+                            <option value="+16">+16</option>
+                            <option value="+18">+18</option>
+                        </select>
+                    </div>
+                    <div class="input-box">
+                        <label for="categoria">Categoria</label required>
+                        <select id="categoria" name="categoria">
+                            <option value="Nenhum">Nenhum</option>
+                            <option value="Ação">Ação</option>
+                            <option value="Aventura">Aventura</option>
+                            <option value="Brasileiros">Brasileiros</option>
+                            <option value="Comédia">Comédia</option>
+                            <option value="Comédia Romântica">Comédia Romântica</option>
+                            <option value="Desenho">Desenho</option>
+                            <option value="Drama">Drama</option>
+                            <option value="Documentário">Documentário</option>
+                            <option value="Erótico">Erótico</option>
+                            <option value="Fantasia">Fantasia</option>
+                            <option value="Ficção">Ficção</option>
+                            <option value="Ficção Científica">Ficção Científica</option>
+                            <option value="Musicais">Musicais</option>
+                            <option value="Romance">Romance</option>
+                            <option value="Suspense">Suspense</option>
+                            <option value="Terror">Terror</option>
+                            <option value="LGBTQIA+">LGBTQIA+</option>
+                        </select>
+                    </div>
+                    <div class="input-box">
+                        <label for="elenco">Elenco</label>
+                        <input class="elenco" id="elenco" type="text" name="elenco" placeholder="" minlength="20"
+                            maxlength="50" required>
+                        <span class="mensagem-erro" data-erro></span>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="sinopse">Sinopse</label>
+                        <textarea name="sinopse" class="sinopse" id="sinopse" type="text"
+                            placeholder="Escreva um pouco sobre a série" id="floatingTextarea2" style="height: 100px"
+                            minlength="20" maxlength="100" required></textarea>
+                        <label for="floatingTextarea2"></label>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
