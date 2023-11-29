@@ -1,48 +1,45 @@
-<!DOCTYPE html>
-<html lang="pt-br">
+<?php
+session_start();
 
-<head>
-    <!-- ANA CAROLINA RODRIGUES DO VALE -->
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inserção de Dados</title>
-</head>
+// Verifique se o usuário já está logado
+if (isset($_SESSION['user_id'])) {
+    header('Location: Inicio.html');
+    exit;
+}
 
-<body>
-    <?php
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+// Verifique se o formulário de registro foi enviado
+if (isset($_POST['register'])) {
+    // Conecte-se ao banco de dados (substitua com suas próprias credenciais)
+    $db = new mysqli("127.0.0.1", "root", "root", "bd_magcine");
 
-        require_once('conexao.php');
-
-        $nome = $_POST["nome"];
-        $cpf = $_POST["cpf"];
-        $sexo = $_POST["sexo"];
-        $data_nascimento = $_POST["data_nascimento"];
-        $celular = $_POST["celular"];
-        $email = $_POST["email"];
-        $endereco = $_POST["endereco"];
-        $senha = $_POST["senha"];
-        $id_alu_fk = $_POST["id_alu_fk"];
-
-        $sql = "INSERT INTO Usuario VALUES (null, '$nome', '$cpf', '$sexo', '$data_nascimento', '$celular', '$email', '$endereco', '$senha', '$id_alu_fk');";
-
-        if (!is_numeric($id_alu_fk)) {
-            echo "ID de aluguel inválido!";
-            exit; // Encerra o script
-        }
-
-        if ($conn->query($sql) === TRUE) {
-            echo "Dados inseridos com sucesso!";
-        } else {
-            echo "Erro na inserção: " . $conn->error;
-        }
-
-        $conn->close();
-    } else {
-        echo "Erro Dados";
+    if ($db->connect_error) {
+        die("Erro na conexão com o banco de dados: " . $db->connect_error);
     }
-    ?>
-</body>
 
-</html>
+    // Valide e insira os dados no banco de dados (exemplo para a tabela "Usuario")
+    $nome = $db->real_escape_string($_POST['nome']);
+    $cpf = $db->real_escape_string($_POST['cpf']);
+    $sexo = $db->real_escape_string($_POST['sexo']);
+    $data_nascimento = $db->real_escape_string($_POST['data_nascimento']);
+    $celular = $db->real_escape_string($_POST['celular']);
+    $email = $db->real_escape_string($_POST['email']);
+    $endereco = $db->real_escape_string($_POST['endereco']);
+    $senha = $db->real_escape_string($_POST['senha']);
+
+    // Execute a inserção no banco de dados
+    $query = "INSERT INTO Usuario (nome_usu, cpf_usu, sexo_usu, data_nascimento, celular_usu, email_usu, endereco_usu, senha_usu) VALUES ('$nome', '$cpf', '$sexo', '$data_nascimento', '$celular', '$email', '$endereco', '$senha');";
+
+    if ($db->query($query) === true) {
+        // Registro bem-sucedido, redirecione para a página de assinatura
+        echo "Erro ao registrar: ";
+        header('Location: Assinatura.php');
+        exit;
+    } else {
+        // Trate erros de inserção
+        echo "Erro ao registrar: " . $db->error;
+    }
+
+    $db->close();
+}
+?>
+<!-- Seu formulário de cadastro de usuário HTML aqui -->

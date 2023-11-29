@@ -1,16 +1,19 @@
 create database bd_magcine;
+
 use bd_magcine;
-Create table Aluguel (
-    id_alu int primary key auto_increment,
-    Nome_alu varchar(100),
-    Sobrenome_alu varchar(100),
-    Telefone_alu varchar(100),
-    CPF_alu varchar(100),
-    Numero_do_cartao_alu varchar(100),
-    Data_de_validade_alu date,
+
+Create table Assinatura (
+    id_ass int primary key auto_increment,
+    Nome_ass varchar(100),
+    Sobrenome_ass varchar(100),
+    Telefone_ass varchar(100),
+    CPF_ass varchar(100),
+    Numero_do_cartao_ass varchar(100),
+    Data_de_validade_ass date,
     Codigo_de_seguranca varchar(100),
     Forma_de_pagamento varchar(100)
 );
+
 create table Usuario (
     id_usu int primary key auto_increment,
     nome_usu varchar(50),
@@ -21,9 +24,10 @@ create table Usuario (
     email_usu varchar(50),
     endereco_usu varchar(50),
     senha_usu varchar(50),
-    id_alu_fk int,
-    foreign key (id_alu_fk) references Aluguel (id_alu)
+    id_ass_fk int,
+    foreign key (id_ass_fk) references Assinatura (id_ass)
 );
+
 create table Filmes (
     id_fil int primary key auto_increment,
     titulo_fil varchar(50),
@@ -34,9 +38,10 @@ create table Filmes (
     classificacao_fil varchar(50),
     elenco_fil varchar(100),
     sinopse_fil varchar(100),
-    id_alu_fk int,
-    foreign key (id_alu_fk) references Aluguel (id_alu)
+    id_ass_fk int,
+    foreign key (id_ass_fk) references Assinatura (id_ass)
 );
+
 Create table Funcionarios (
     Id_fun int primary key auto_increment,
     Nome_fun varchar(100),
@@ -48,6 +53,7 @@ Create table Funcionarios (
     Estado_fun varchar(100),
     Endereco_fun varchar(200)
 );
+
 create table Contato (
     id_cont int primary key auto_increment,
     nome_completo_cont varchar(200),
@@ -59,6 +65,7 @@ create table Contato (
     sua_mensagem_cont varchar(500),
     tipo_mensagem_cont varchar(100)
 );
+
 create table Serie (
     id_seri int primary key auto_increment,
     nome_seri varchar(200),
@@ -69,6 +76,7 @@ create table Serie (
     categoria_seri varchar(50),
     elenco_seri varchar(100),
     sinopse_seri varchar (800),
-    id_alu_fk int,
-    foreign key (id_alu_fk) references Aluguel (id_alu)
+    id_ass_fk int,
+    foreign key (id_ass_fk) references Assinatura (id_ass)
 );
+

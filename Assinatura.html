@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<!-- GIOVANA DEMUNER -->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/Aluguel.layout.css">
+    <link rel="icon" href="img/LOGO.png" href="Inicio.html">
+    <title>Aluguel</title>
+    <style>
+      
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <form method="post" action="php/Assinatura.php">
+            <fieldset>
+                <legend><b>Aluguel</b></legend>
+                <br>
+                <div class="inputBox">
+                    <label for="Nome" class="labelInput">Nome </label>
+                    <input type="text" name="Nome" id="Nome" class="inputUser" required minlength="2" maxlength="256">
+                </div>
+                <br><br>
+                <div class="inputBox">
+                    <label for="Sobrenome"class="labelInput">Sobrenome</label>
+                    <input type="text" name="Sobrenome" id="Sobrenome" class="inputUser" required minlength="3" maxlength="256">  
+                </div>
+                <br><br>
+                <div class="inputBox">
+                    <label for="Telefone"class="labelInput">Telefone</label>
+                    <input type="tel" name="Telefone" id="Telefone" class="inputUser" required pattern="\(\d{2}\)\d{4}-\d{4}">
+                </div>
+                <br>
+                <div class="inputBox">
+                    <label for="Cpf"class="labelInput">CPF</label>
+                    <input type="text" name="Cpf" id="Cpf" class="inputUser" required pattern="\d{3}\.\d{3}\.\d{3}-\d{2}">
+                </div>
+                <br>
+                <label for="Numero_do_cartao" class="labelInput"> Número do cartão:</b></label>
+                <input type="text" name="Numero_do_cartao" id="Numero_do_cartao"  required pattern="\d{4} \d{4} \d{4} \d{4}">
+                <br><br>
+                <div class="inputBox">
+                    <label for="Data_de_validade" class="labelInput">Data de validade</label>
+                    <input type="date" name="Data_de_validade" id="Data_de_validade" class="inputUser" required>
+                </div>
+                <br><br>
+                <div class="inputBox">
+                    <label for="Codigo_de_seguranca" class="labelInput">Código de segurança(CVV)</label>
+                    <input type="text" name="Codigo_de_seguranca" id="Codigo_de_seguranca" class="inputUser" required minlength="3" maxlength="3">                   
+                </div>
+                <p><b>Escolha sua forma de pagamento preferida:</b></p>
+
+
+                <div class="input-box">
+                    <label for="Pagamento">Pagamento:</label>
+                    <select id="Pagamento" name="Pagamento">
+                        <option value="ㅤ">Selecione</option>
+                        <option value="Crédito">Crédito</option>
+                        <option value="Débito">Débito</option>
+                    </select>
+                </div>
+                <button onclick="validarCPF()" type="submit">Cadastrar</button>
+
+            </fieldset>
+        </form>
+
+    </div>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
